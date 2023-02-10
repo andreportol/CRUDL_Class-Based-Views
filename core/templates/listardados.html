@@ -7,6 +7,7 @@
         <div class="col">
             <h1 class="text-center text-white fs-1 py-4">Tabela Filtrada</h1>
             <h2 class="text-center text-white fs-4 py-1">Dados do Imóvel </h2>
+                       
             <!-- Inserir tabela aqui-->
             <table class="table table-primary table-striped">
                 <thead>
@@ -41,7 +42,9 @@
                     {% endfor %}
                 </tbody>
             </table>
-
+            <a href="{% url 'index' %}">
+                <button class="btn btn-primary my-3">Voltar</button>
+            </a>
 
 
         </div>
