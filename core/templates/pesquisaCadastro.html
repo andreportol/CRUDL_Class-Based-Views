@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md">
+        <div class="row g-3">
+            <form class="form border rounded p-3" action="{% url 'pesquisaCadastro' %}" method="GET">
+                <div class="row">
+                    <h3 class="Fs-3 text-center text-white py-2">Sistema de Busca</h3>
+                    <div class="col-md-6">
+                        <label for="inputInscricao" class="form-label">Inscrição:</label>
+                        <input name="inscricao" type="text" class="form-control" id="inputInscricao"
+                            placeholder="Inscrição Imobiliária">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputNameOcupante" class="form-label">Nome:</label>
+                        <input name="nome_ocupante" type="text" class="form-control" id="inputNameOcupante"
+                            placeholder="Nome do Ocupante">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 col-md-8">
+                        <label for="inputAddress" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Marechal Rondon">
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-4">
+                        <label for="inputAddress2" class="form-label">Número</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="2665">
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-12">
+                        <select class="custom-select mt-3" id="inputGroupSelect01" name="regiao" required>
+                            <option selected>Regiões Urbanas</option>
+                            <option value="Anhanduizinho">Anhanduizinho</option>
+                            <option value="Bandeira">Bandeira</option>
+                            <option value="Centro">Centro</option>
+                            <option value="Imbirussu">Imbirussu</option>
+                            <option value="Lagoa">Lagoa</option>
+                            <option value="Prosa">Prosa</option>
+                            <option value="Segredo">Segredo</option>
+                            <option value="Dist. Anhandui">Dist. Anhandui</option>
+                            <option value="Dist. Rochedinho">Dist. Rochedinho</option>
+                            <option value="Zona Rural">Zona Rural</option>
+                        </select>
+                    </div>
+                    <div class="col-12 my-3">
+                        <button type="submit" class="btn btn-primary my-3">Pesquisar</button>
+                        <a class="btn btn-primary mx-3" href="{% url 'index' %}" role="button">Voltar</a>
+                    </div>
+                </div>
+                <h4 class="fs-3 text-white text-center">Dados Filtrados</h4>
+                <table class="table table-primary table-striped mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Inscrição</th>
+                            <th scope="col">Região</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in filter.qs %}
+                        <tr>
+                            <td><a href="{% url 'dadosComplementares' obj.id %}">{{ obj.id }}</a></td>
+                            <td>{{ obj.inscricao }}</td>
+                            <td>{{ obj.regiao }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

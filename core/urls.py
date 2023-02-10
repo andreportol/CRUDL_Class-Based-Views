@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views import (CreateCadastroView, DeleteCadastroView, IndexView,
-                    ListarDadosView, UpdateCadastroView)
+                    ListarDadosView, PesquisaCadastro, UpdateCadastroView)
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
@@ -10,6 +10,7 @@ urlpatterns = [
     path('cadastro', CreateCadastroView.as_view(), name='cadastro'),
     path('<int:pk>/update/', UpdateCadastroView.as_view(), name='update_cadastro'),
     path('<int:pk>/delete/', DeleteCadastroView.as_view(), name='del_cadastro'),
+    path('pesquisar', PesquisaCadastro.pesquisar, name='pesquisaCadastro' )
 ]
 
 

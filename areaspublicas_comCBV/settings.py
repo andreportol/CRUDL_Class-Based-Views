@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'core',
     'django_bootstrap5',
     'django.contrib.humanize', # ajuda na formatação dos valores numericos
+    'django_filters',
 ]
 
 MIDDLEWARE = [

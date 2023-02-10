@@ -3,9 +3,9 @@
 {% block content %}
     <form method="post">
         {% csrf_token %}
-        <p>Tem certeza que deseja deletar o cadastro com a {{ object }} ?</p>
+        <p class="fs-5 pt-4">Tem certeza que deseja deletar o cadastro com a {{ object }} ?</p>
         <button type="submit" class="btn btn-danger mb-3">Confirmar</button>
-        <a href="{% url 'listardados' %}">
+        <a class="pb-3" href="{% url 'listardados' %}">
             <button class="btn btn-warning mb-3">Cancelar</button>
         </a>
     </form>

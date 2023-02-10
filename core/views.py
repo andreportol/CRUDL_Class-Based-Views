@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
+from .filters import CadastroFilter
 from .models import Localizacao
 
 
@@ -46,3 +47,15 @@ class DeleteCadastroView(DeleteView):
     model = Localizacao
     template_name = 'cadastro_del.html'
     success_url = reverse_lazy('listardados')  
+
+class PesquisaCadastro():
+    
+    def pesquisar(request):
+        template_name = 'pesquisaCadastro.html'
+        object_list = Localizacao.objects.all()
+        cadastro_list = CadastroFilter(request.GET, queryset=object_list)
+        context = {
+            'object_list' : object_list,
+            'filter': cadastro_list
+        }
+        return render(request, template_name, context)
