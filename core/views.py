@@ -44,5 +44,5 @@ class UpdateCadastroView(UpdateView):
 
 class DeleteCadastroView(DeleteView):
     model = Localizacao
-    template_name = 'produto_del.html'
-    success_url = reverse_lazy('index')  
+    template_name = 'cadastro_del.html'
+    success_url = reverse_lazy('listardados')  
