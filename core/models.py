@@ -46,5 +46,5 @@ class Localizacao(Base):
     observacao = models.TextField('Observação', null=None)
     
     def __str__(self):
-        return f'{self.inscricao} {self.regiao} {self.tipo_logradouro} {self.logradouro} {self.numero}'
+        return f' Inscrição Imobiliária: {self.inscricao}'
         

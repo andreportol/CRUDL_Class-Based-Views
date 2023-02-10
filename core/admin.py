@@ -5,4 +5,4 @@ from .models import Localizacao
 
 @admin.register(Localizacao)
 class LocalizacaoAdmin(admin.ModelAdmin):
-    list_display = ('inscricao','utmX', 'utmY','regiao', 'bairro', 'numero', 'observacao')
+    list_display = ('id','inscricao','utmX', 'utmY','regiao', 'bairro', 'numero', 'observacao')
