@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid bg-nav">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center text-white fs-1 py-2">Informações Complementares</h1>
+            <!-- tabela localização -->
+            <h2 class="fs-4 text-center text-white">Dados Imóvel</h2>
+            <table class="table table-primary table-striped mt-4">
+                <thead>
+                    <tr>                       
+                        <th scope="col">Tipo Logradouro</th>
+                        <th scope="col">Parcelamento</th>
+                        <th scope="col">Quadra</th>
+                        <th scope="col">Lote</th>
+                        <th scope="col">Observação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dado in complementos %}
+                    <tr>
+                        <td>{{ dado.tipo_logradouro }}</td>
+                        <td>{{ dado.parcelamento }}</td>
+                        <td>{{ dado.quadra }}</td>
+                        <td>{{ dado.lote }}</td>
+                        <td>{{ dado.observacao }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+{% endblock %}

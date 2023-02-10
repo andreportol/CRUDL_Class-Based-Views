@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center text-white fs-1 py-4">Tabela Filtrada</h1>
+            <h2 class="text-center text-white fs-4 py-1">Dados do Imóvel </h2>
+            <!-- Inserir tabela aqui-->
+            <table class="table table-primary table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Inscrição</th>
+                        <th scope="col">UTM X</th>
+                        <th scope="col">UTM Y</th>  
+                        <th scope="col">Região</th>
+                        <th scope="col">Bairro</th>
+                        <th scope="col">Logradouro</th>  
+                        <th scope="col">Número</th>
+                        <th class="text-center" scope="col">Ação</th>                      
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dado in localizacao %}
+                    <tr>
+                        <td><a href="{% url 'dadosComplementares' dado.pk %}">{{ dado.id }}</a></td>
+                        <td>{{ dado.inscricao }}</td>
+                        <td>{{ dado.utmX|intcomma }}</td> <!--chamando o humanize -->
+                        <td>{{ dado.utmY|intcomma}}</td>
+                        <td>{{ dado.regiao }}</td>
+                        <td>{{ dado.bairro }}</td>
+                        <td>{{ dado.logradouro }}</td>
+                        <td>{{ dado.numero }}</td>
+                        <td class="text-center">
+                            <a class="btn btn-warning" href="{% url 'update_cadastro' dado.id %}" role="button">Editar</a>
+                            <a class="btn btn-danger" href="#" role="button">Excluir</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+
+{% endblock %}

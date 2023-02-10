@@ -1,0 +1,96 @@
+{% load django_bootstrap5 %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+                    <!--Cadastro Dados do Imóvel-->
+                    <div class="container mb-5 p-2">
+                        <div class="row">
+                            <div class="col text-center fs-4 p-3">
+                                <h2 class="fs-2">Dados do Local</h2>
+                            </div>
+                        </div>
+                        <div class="row border rounded ">
+                            <div class="col-lg-6 pb-3">
+                                <label class="form-label fs-6">Inscrição Imobiliária:</label>
+                                <input class="form-control w-auto" type="text" placeholder="N. da Inscrição" autofocus maxlength="11"
+                                    name="inscricao" value="{{ localizacao.inscricao }}">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label class="form-label fs-6">Coordernada UTM: </label>
+                                    </div>
+                                    <div class="col-lg-8 py-2 ">
+                                        <input class="form-control w-auto" type="number" placeholder="Coord. X" name="utmX" value="{{ localizacao.utmX }}">
+                                        <div class="pt-2">
+                                            <input class="form-control w-auto" type="number" placeholder="Coord. Y" name="utmY" value="{{ localizacao.utmY }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col border rounded py-2">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Opções</label>
+                                    </div>
+                                    <select class="custom-select" id="inputGroupSelect01" name="regiao" value="{{ localizacao.regiao }}" required>
+                                        <option selected>Regiões Urbanas</option>
+                                        <option value="Anhanduizinho">Anhanduizinho</option>
+                                        <option value="Bandeira">Bandeira</option>
+                                        <option value="Centro">Centro</option>
+                                        <option value="Imbirussu">Imbirussu</option>
+                                        <option value="Lagoa">Lagoa</option>
+                                        <option value="Prosa">Prosa</option>
+                                        <option value="Segredo">Segredo</option>
+                                        <option value="Dist_Anhandui">Dist. Anhandui</option>
+                                        <option value="Dist_Rochedinho">Dist. Rochedinho</option>
+                                        <option value="Zona_Rural">Zona Rural</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5 border rounded">
+                            <div class="col-lg-12 pt-2">
+                                <label class="form-label fs-6">Bairro:</label>
+                                <input name="bairro" class="form-control" type="text" placeholder="Bairro" value="{{ localizacao.bairro }}" required>
+                                <label class="form-label fs-6 pt-2">Parcelamento:</label>
+                                <input value="{{ localizacao.parcelamento }}" name="parcelamento" class="form-control w-auto" type="text" placeholder="Parcelamento" required>
+                                <label class="form-label fs-6 pt-2">Quadra:</label>
+                                <input value="{{ localizacao.quadra }}" name="quadra" class="form-control w-auto" type="text" placeholder="Quadra" required>
+                                <label class="form-label fs-6 pt-2">Lote:</label>
+                                <input value="{{ localizacao.lote }}" name="lote" class="form-control w-auto" type="text" placeholder="Lote" required>
+                                <div class="input-group pt-4">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect02">Opções</label>
+                                    </div>
+                                    <select class="custom-select" id="inputGroupSelect02" name="tipo_logradouro" value="{{ localizacao.tipo_logradouro }}" required>
+                                        <option selected>Tipo Logradouro</option>
+                                        <option value="Avenida">Avenida</option>
+                                        <option value="Chacara">Chácara</option>
+                                        <option value="Estrada">Estrada</option>
+                                        <option value="Rodovia">Rodovia</option>
+                                        <option value="Rua">Rua</option>
+                                        <option value="Travessa">Travessa</option>
+                                        <option value="Via">Via</option>
+                                    </select>
+                                </div>
+                                <label class="form-label fs-6 pt-2">Logradouro:</label>
+                                <input name="logradouro" value="{{ localizacao.logradouro }}" class="form-control" type="text" placeholder="Logradouro" required>
+                                <label class="form-label fs-6 pt-2">Número:</label>
+                                <input class="form-control w-auto" value="{{ localizacao.numero }}" name="numero" type="text" placeholder="Número do local">
+                                <label class="form-label fs-6 pt-2">Observações:</label>
+                                <textarea class="form-control mb-3" placeholder="Descreva as observações do local." name="observacao"
+                                value="{{ localizacao.observacao }}" rows="7">
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+{% endblock %}

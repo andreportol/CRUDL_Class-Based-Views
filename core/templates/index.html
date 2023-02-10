@@ -1,0 +1,59 @@
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Inscrições</title>
+
+    <!-- carregando o link css e o script do javascript -->
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <!-- carregando o arquivo styles.css da pasta static -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm pt-3 align-self-start">
+                    <img class="border" src="{% static 'img/Brasao.png' %}" alt="Bootstrap" width="80" height="80">
+                    <p class="text-white pt-2 text-decoration-underline">PREFEITURA MUNICIPAL DE CAMPO GRANDE</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm text-white text-center">
+                    <h3>CGAP – Coordenadoria de Gestão de Áreas Públicas</h3>
+                    <h5>Secretária Municipal de Meio Ambiente e Gestão Urbana</h5>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container navbar border rounded text-center text-white mt-5 pb-5">
+        <div class="container navbar text-center text-white mt-5 pb-5">
+            <div class="row">
+                <div class="col">
+                    <h2 class="fs-1 mt-3">Escolha uma opção</h2>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col">
+                    <a class="btn btn-lg btn-primary mt-3" href="{% url 'cadastro' %}" role="button">Cadastrar</a>
+                </div>     
+                <div class="col">
+                    <a class="btn btn-lg btn-primary mt-3" href="{% url 'listardados' %}" role="button">Pesquisar</a>
+                </div>
+                <div class="col">
+                    <a class="btn btn-lg btn-primary mt-3" href="{% url 'listardados' %}" role="button">Visualizar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
