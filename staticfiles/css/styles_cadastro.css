@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+html body {
+    font-family: "Poppins", sans-serif;  
+}
+/* navegação */
+.bg-nav{
+    background-color: #005588;
+}
+
+/* Formulário */
+.text-title{
+    background-color:#005588;
+}
+
+.container-form{
+    background-color: #005588;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: rgb(246, 255, 0);
+}
+.navbar{
+    background-color:#005588;
+}
+.container{
+   display: flex;
+   flex-direction: column;
+}
+.container p{
+    font-size: 12px;
+    font-weight: 400;
+}
+.select-option{
+    background-color:#005588;
+    border-radius: 10px;
+    margin: 5px;
+    color: white;
+    padding: 35px;
+}
+.select-option p{
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 10px;
+}

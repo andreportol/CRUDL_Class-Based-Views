@@ -23,9 +23,9 @@
                                         <label class="form-label fs-6">Coordernada UTM: </label>
                                     </div>
                                     <div class="col-lg-8 py-2 ">
-                                        <input class="form-control w-auto" type="number" data-mask="0000.00" placeholder="Coord. X" name="utmX" value="{{ localizacao.utmX }}">
+                                        <input class="form-control w-auto" type="number" data-mask="0000.00" placeholder="Coord. X" name="utmX" value="{{ localizacao.utmX|cut:'2' }}">
                                         <div class="pt-2">
-                                            <input class="form-control w-auto" type="number" placeholder="Coord. Y" name="utmY" value="{{ localizacao.utmY }}">
+                                            <input class="form-control w-auto" type="number" placeholder="Coord. Y" name="utmY" value="{{ localizacao.utmY|cut:'2' }}">
                                         </div>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                     <div class="input-group-prepend">
                                         <label class="input-group-text" for="inputGroupSelect01">Opções</label>
                                     </div>
-                                    <select class="custom-select" id="inputGroupSelect01" name="regiao" value="{{ localizacao.regiao }}" required>
+                                    <select class="custom-select" id="inputGroupSelect01" name="regiao" value= "{{ localizacao.regiao }}" required>
                                         <option selected>Regiões Urbanas</option>
                                         <option value="Anhanduizinho">Anhanduizinho</option>
                                         <option value="Bandeira">Bandeira</option>
@@ -86,7 +86,7 @@
                                 <input class="form-control w-auto" value="{{ localizacao.numero }}" name="numero" type="text" placeholder="Número do local">
                                 <label class="form-label fs-6 pt-2">Observações:</label>
                                 <textarea class="form-control mb-3" placeholder="Descreva as observações do local." name="observacao"
-                                value="{{ localizacao.observacao }}" rows="7">
+                                value="{{ context_object_name }}" rows="7">
                                 </textarea>
                             </div>
                         </div>

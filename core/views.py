@@ -37,7 +37,7 @@ class UpdateCadastroView(UpdateView):
     model = Localizacao
     template_name = 'cadastro.html'
     fields = ['inscricao', 'utmX', 'utmY','regiao', 'bairro', 'parcelamento', 'quadra',
-        'lote','tipo_logradouro','logradouro','numero', 'observacao']
+        'lote','tipo_logradouro','logradouro','numero', 'observacao',]
     queryset = Localizacao.objects.order_by('id').all()
     context_object_name = 'localizacao'
     success_url = reverse_lazy('listardados')
