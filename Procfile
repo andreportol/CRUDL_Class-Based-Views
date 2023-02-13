@@ -1,1 +1,1 @@
-web: gunicorn areaspublicas.wsgi --log-file - 
+web: gunicorn areaspublicas_comCBV.wsgi --log-file - 
