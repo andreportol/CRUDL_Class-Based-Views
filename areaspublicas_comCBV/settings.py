@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'django.contrib.humanize', # ajuda na formatação dos valores numericos
     'django_filters',
+    'bootstrap5'
 ]
 
 MIDDLEWARE = [
