@@ -11,9 +11,9 @@ class Base(models.Model):
         abstract = True
 
 class Localizacao(Base):
-    inscricao = models.CharField('Inscrição Imobiliária', max_length=11, null=None)
-    utmX = models.DecimalField('UTM_X', max_digits=8, decimal_places=2, null=None)
-    utmY = models.DecimalField('UTM_Y', max_digits=8, decimal_places=2, null=None)
+    inscricao = models.CharField('Inscrição Imobiliária', max_length=11, blank=True)
+    utmX = models.DecimalField('UTM_X', max_digits=8, decimal_places=2, null=True)
+    utmY = models.DecimalField('UTM_Y', max_digits=8, decimal_places=2, null=True)
     REGIAO_CHOICES = (
         ('Anhanduizinho', 'Anhanduizinho'),
         ('Bandeira', 'Bandeira'),
@@ -26,11 +26,11 @@ class Localizacao(Base):
         ('Dist_Rochedinho', 'Dist. Rochedinho'),
         ('Zona_Rural', 'Zona Rural'),
     ) 
-    regiao = models.CharField('Região', max_length=16, choices=REGIAO_CHOICES)
-    bairro = models.CharField('Bairro', max_length=100)
-    parcelamento = models.CharField('Parcelamento', max_length=5)
-    quadra = models.CharField('Quadra', max_length=5)
-    lote = models.CharField('Lote', max_length=5)
+    regiao = models.CharField('Região', max_length=16, choices=REGIAO_CHOICES, blank=False)
+    bairro = models.CharField('Bairro', max_length=100, blank=False)
+    parcelamento = models.CharField('Parcelamento', max_length=5, blank=False)
+    quadra = models.CharField('Quadra', max_length=5, blank=False)
+    lote = models.CharField('Lote', max_length=5, blank=False)
     TIPO_CHOICES = (
         ('Avenida', 'Avenida'),
         ('Rua', 'Rua'),
@@ -40,10 +40,10 @@ class Localizacao(Base):
         ('Estrada', 'Estrada'),
         ('Chacara', 'Chacara'),
     )  
-    tipo_logradouro = models.CharField('Tipo Logradouro', max_length=25, choices=TIPO_CHOICES)
-    logradouro = models.CharField('Logradouro', max_length=100)
-    numero = models.CharField('Número', max_length=6)
-    observacao = models.TextField('Observação', null=None)
+    tipo_logradouro = models.CharField('Tipo Logradouro', max_length=25, choices=TIPO_CHOICES, blank=False)
+    logradouro = models.CharField('Logradouro', max_length=100, blank=False)
+    numero = models.CharField('Número', max_length=6, blank=True)
+    observacao = models.TextField('Observação', blank=True)
     
     def __str__(self):
         return f' Inscrição Imobiliária: {self.inscricao}'

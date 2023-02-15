@@ -1,5 +1,5 @@
-{% load django_bootstrap5 %}
 {% load static %}
+{% load django_bootstrap5 %}
 {% load humanize %}
 {% block content %}
 
@@ -13,7 +13,7 @@
                         <div class="row border rounded ">
                             <div class="col-lg-6 pb-3">
                                 <label class="form-label fs-6">Inscrição Imobiliária:</label>
-                                <input class="form-control w-auto" type="text" placeholder="N. da Inscrição" autofocus maxlength="11"
+                                <input class="form-control w-auto" type="text" placeholder="N. da Inscrição" autofocus size="11"
                                     name="inscricao" value="{{ localizacao.inscricao }}">
                             </div>
 
@@ -23,9 +23,9 @@
                                         <label class="form-label fs-6">Coordernada UTM: </label>
                                     </div>
                                     <div class="col-lg-8 py-2 ">
-                                        <input class="form-control w-auto" type="number" data-mask="0000.00" placeholder="Coord. X" name="utmX" value="{{ localizacao.utmX|cut:'2' }}">
+                                        <input class="form-control w-auto" type="number" step="0.01" placeholder="Coord. X" name="utmX" value="{{ localizacao.utmX|cut:'2' }}">
                                         <div class="pt-2">
-                                            <input class="form-control w-auto" type="number" placeholder="Coord. Y" name="utmY" value="{{ localizacao.utmY|cut:'2' }}">
+                                            <input class="form-control w-auto" type="number" step="0.01" placeholder="Coord. Y" name="utmY" value="{{ localizacao.utmY|cut:'2' }}">
                                         </div>
                                     </div>
                                 </div>
@@ -36,10 +36,9 @@
                             <div class="col border rounded py-2">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect01">Opções</label>
+                                        <label class="input-group-text" for="inputGroupSelect01">Regiões Urbanas</label>
                                     </div>
-                                    <select class="custom-select" id="inputGroupSelect01" name="regiao" value= "{{ localizacao.regiao }}" required>
-                                        <option selected>Regiões Urbanas</option>
+                                    <select class="custom-select" id="inputGroupSelect01" name="regiao" required>
                                         <option value="Anhanduizinho">Anhanduizinho</option>
                                         <option value="Bandeira">Bandeira</option>
                                         <option value="Centro">Centro</option>
@@ -50,6 +49,7 @@
                                         <option value="Dist_Anhandui">Dist. Anhandui</option>
                                         <option value="Dist_Rochedinho">Dist. Rochedinho</option>
                                         <option value="Zona_Rural">Zona Rural</option>
+                                        <option selected value="{{ localizacao.regiao }}">{{ localizacao.regiao }}</option>
                                     </select>
                                 </div>
                             </div>
@@ -67,10 +67,9 @@
                                 <input value="{{ localizacao.lote }}" name="lote" class="form-control w-auto" type="text" placeholder="Lote" required>
                                 <div class="input-group pt-4">
                                     <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect02">Opções</label>
+                                        <label class="input-group-text" for="inputGroupSelect02">Tipo Logradouro</label>
                                     </div>
-                                    <select class="custom-select" id="inputGroupSelect02" name="tipo_logradouro" value="{{ localizacao.tipo_logradouro }}" required>
-                                        <option selected>Tipo Logradouro</option>
+                                    <select class="custom-select" id="inputGroupSelect02" name="tipo_logradouro" required>
                                         <option value="Avenida">Avenida</option>
                                         <option value="Chacara">Chácara</option>
                                         <option value="Estrada">Estrada</option>
@@ -78,6 +77,7 @@
                                         <option value="Rua">Rua</option>
                                         <option value="Travessa">Travessa</option>
                                         <option value="Via">Via</option>
+                                        <option selected value="{{ localizacao.tipo_logradouro }}">{{ localizacao.tipo_logradouro }}</option>
                                     </select>
                                 </div>
                                 <label class="form-label fs-6 pt-2">Logradouro:</label>
@@ -86,11 +86,8 @@
                                 <input class="form-control w-auto" value="{{ localizacao.numero }}" name="numero" type="text" placeholder="Número do local">
                                 <label class="form-label fs-6 pt-2">Observações:</label>
                                 <textarea class="form-control mb-3" placeholder="Descreva as observações do local." name="observacao"
-                                value="{{ context_object_name }}" rows="7">
-                                </textarea>
+                                    rows="7">{{ localizacao.observacao }}</textarea>
                             </div>
                         </div>
                     </div>
-
-
 {% endblock %}
