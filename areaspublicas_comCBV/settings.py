@@ -32,12 +32,12 @@ INSTALLED_APPS = [
     'core',
     'django_bootstrap5',
     'django.contrib.humanize', # ajuda na formatação dos valores numericos
-    'django_filters',
-    
+    'django_filters',   
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Campo_Grande'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
