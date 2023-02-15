@@ -13,7 +13,7 @@
                         <div class="row border rounded ">
                             <div class="col-lg-6 pb-3">
                                 <label class="form-label fs-6">Inscrição Imobiliária:</label>
-                                <input class="form-control w-auto" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="N. da Inscrição" autofocus maxlength="11" minlength="11">
+                                <input class="form-control w-auto" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="N. da Inscrição" autofocus maxlength="11" minlength="11"
                                     name="inscricao" value="{{ localizacao.inscricao }}">
                             </div>
 
@@ -22,7 +22,7 @@
                                     <div class="col-lg-4">
                                         <label class="form-label fs-6">Coordernada UTM: </label>
                                     </div>
-                                    <div class="col-lg-8 py-2 ">
+                                    <div class="col-lg-8">
                                         <input class="form-control w-auto" type="number" step="0.01" placeholder="Coord. X" name="utmX" value="{{ localizacao.utmX|cut:'2' }}">
                                         <div class="pt-2">
                                             <input class="form-control w-auto" type="number" step="0.01" placeholder="Coord. Y" name="utmY" value="{{ localizacao.utmY|cut:'2' }}">
@@ -38,7 +38,7 @@
                                     <div class="input-group-prepend">
                                         <label class="input-group-text" for="inputGroupSelect01">Regiões Urbanas</label>
                                     </div>
-                                    <select class="custom-select" id="inputGroupSelect01" name="regiao" required>
+                                    <select class="custom-select w-auto" id="inputGroupSelect01" name="regiao" required>
                                         <option value="Anhanduizinho">Anhanduizinho</option>
                                         <option value="Bandeira">Bandeira</option>
                                         <option value="Centro">Centro</option>
@@ -69,7 +69,7 @@
                                     <div class="input-group-prepend">
                                         <label class="input-group-text" for="inputGroupSelect02">Tipo Logradouro</label>
                                     </div>
-                                    <select class="custom-select" id="inputGroupSelect02" name="tipo_logradouro" required>
+                                    <select class="custom-select w-auto" id="inputGroupSelect02" name="tipo_logradouro" required>
                                         <option value="Avenida">Avenida</option>
                                         <option value="Chacara">Chácara</option>
                                         <option value="Estrada">Estrada</option>
