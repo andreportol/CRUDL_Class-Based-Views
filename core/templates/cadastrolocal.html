@@ -13,7 +13,7 @@
                         <div class="row border rounded ">
                             <div class="col-lg-6 pb-3">
                                 <label class="form-label fs-6">Inscrição Imobiliária:</label>
-                                <input class="form-control w-auto" type="text" placeholder="N. da Inscrição" autofocus size="11"
+                                <input class="form-control w-auto" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="N. da Inscrição" autofocus maxlength="11" minlength="11">
                                     name="inscricao" value="{{ localizacao.inscricao }}">
                             </div>
 
@@ -60,11 +60,11 @@
                                 <label class="form-label fs-6">Bairro:</label>
                                 <input name="bairro" class="form-control" type="text" placeholder="Bairro" value="{{ localizacao.bairro }}" required>
                                 <label class="form-label fs-6 pt-2">Parcelamento:</label>
-                                <input value="{{ localizacao.parcelamento }}" name="parcelamento" class="form-control w-auto" type="text" placeholder="Parcelamento" required>
+                                <input value="{{ localizacao.parcelamento }}" name="parcelamento" class="form-control" type="text" placeholder="Parcelamento" required>
                                 <label class="form-label fs-6 pt-2">Quadra:</label>
-                                <input value="{{ localizacao.quadra }}" name="quadra" class="form-control w-auto" type="text" placeholder="Quadra" required>
+                                <input value="{{ localizacao.quadra }}" name="quadra" class="form-control" type="text" placeholder="Quadra" required>
                                 <label class="form-label fs-6 pt-2">Lote:</label>
-                                <input value="{{ localizacao.lote }}" name="lote" class="form-control w-auto" type="text" placeholder="Lote" required>
+                                <input value="{{ localizacao.lote }}" name="lote" class="form-control" type="text" placeholder="Lote" required>
                                 <div class="input-group pt-4">
                                     <div class="input-group-prepend">
                                         <label class="input-group-text" for="inputGroupSelect02">Tipo Logradouro</label>
@@ -83,7 +83,7 @@
                                 <label class="form-label fs-6 pt-2">Logradouro:</label>
                                 <input name="logradouro" value="{{ localizacao.logradouro }}" class="form-control" type="text" placeholder="Logradouro" required>
                                 <label class="form-label fs-6 pt-2">Número:</label>
-                                <input class="form-control w-auto" value="{{ localizacao.numero }}" name="numero" type="text" placeholder="Número do local">
+                                <input class="form-control" value="{{ localizacao.numero }}" name="numero" type="text" placeholder="Número do local">
                                 <label class="form-label fs-6 pt-2">Observações:</label>
                                 <textarea class="form-control mb-3" placeholder="Descreva as observações do local." name="observacao"
                                     rows="7">{{ localizacao.observacao }}</textarea>
