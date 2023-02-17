@@ -11,9 +11,9 @@ class Base(models.Model):
         abstract = True
 
 class Localizacao(Base):
-    inscricao = models.CharField('Inscrição Imobiliária', max_length=11, blank=True)
-    utmX = models.DecimalField('UTM_X', max_digits=8, decimal_places=2, null=True)
-    utmY = models.DecimalField('UTM_Y', max_digits=8, decimal_places=2, null=True)
+    inscricao = models.CharField('Inscrição Imobiliária', max_length=11, blank=True, help_text='Digite os 11 números')
+    utmX = models.DecimalField('UTM_X', max_digits=8, decimal_places=2, blank=True, null=True)
+    utmY = models.DecimalField('UTM_Y', max_digits=8, decimal_places=2, blank=True, null=True)
     REGIAO_CHOICES = (
         ('Anhanduizinho', 'Anhanduizinho'),
         ('Bandeira', 'Bandeira'),
@@ -47,4 +47,13 @@ class Localizacao(Base):
     
     def __str__(self):
         return f' Inscrição Imobiliária: {self.inscricao}'
-        
+    
+    
+    class Meta:
+        '''
+        As verboses names servem para colocar no painel do django/admin os nomes corretos.
+        O não uso das verboses names faz com que o django adicione um 's' no nome 
+        da classe e apresente no painel do django admin. Ex. Localizacao ficaria Localizacaos 
+        '''
+        verbose_name = 'Localização'
+        verbose_name_plural = 'Localizações'

@@ -12,5 +12,3 @@ urlpatterns = [
     path('<int:pk>/delete/', DeleteCadastroView.as_view(), name='del_cadastro'),
     path('pesquisar', PesquisaCadastro.pesquisar, name='pesquisaCadastro' )
 ]
-
-
