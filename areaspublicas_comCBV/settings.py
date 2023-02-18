@@ -24,8 +24,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     # personalizar o painel do django admin
-    'django_adminlte',
-    'django_adminlte_theme',
+    #'django_adminlte',
+    #'django_adminlte_theme',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -81,12 +81,8 @@ WSGI_APPLICATION = 'areaspublicas_comCBV.wsgi.application'
 
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'AreasPublicas',
-    'USER': 'postgres',
-    'PASSWORD':'postgres',
-    'HOST': 'localhost',
-    'PORT': '5433',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
