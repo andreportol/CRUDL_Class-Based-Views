@@ -9,7 +9,7 @@
                 {% bootstrap_javascript %}
                 <div class="row">
                     <div class="col-sm text-white">
-                        <form class="form" onsubmit="FormEnviado()" method="POST" autocomplete="off" enctype="multipart/form-data">
+                        <form class="form" method="POST" autocomplete="off" enctype="multipart/form-data">
                     <!-- Sem o token o formulario não é enviado (csrf_token para form é obrigatorio)-->
                             {% csrf_token %}          
                             {% include 'cadastrolocal.html' %}
