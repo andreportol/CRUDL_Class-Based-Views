@@ -24,8 +24,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     # personalizar o painel do django admin
-    #'django_adminlte',
-    #'django_adminlte_theme',
+    'django_adminlte',
+    'django_adminlte_theme',
 
     'django.contrib.admin',
     'django.contrib.auth',
