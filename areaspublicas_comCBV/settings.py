@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'CSRF_TRUSTED_ORIGINS = ["https://web-production-bb7a.up.railway.app/"]'
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # serve para carregar os arquivos estaticos no modo Debug = False e para fazer o deploy da aplicação
     'django.contrib.sessions.middleware.SessionMiddleware',
