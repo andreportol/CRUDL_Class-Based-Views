@@ -35,6 +35,7 @@
 
     <div class="container container-form text-white mt-5 border rounded">
         {% block content %}
+        {% csrf_token %} 
         <!-- Conteúdo -->
         {% endblock %}
     </div>
