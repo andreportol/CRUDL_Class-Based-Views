@@ -93,7 +93,7 @@ DATABASES = {
 }
 '''
 
-CSRF_TRUSTED_ORIGINS = ['https://django-server-production-5413.up.railway.app/'j]
+CSRF_TRUSTED_ORIGINS = ['https://django-server-production-5413.up.railway.app/']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
