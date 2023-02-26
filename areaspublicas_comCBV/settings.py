@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 #SECRET_KEY = 'django-insecure-%zmpx=79=10x^$)-zxk)%jd-t0-d+^41*nvkv!rsr#gp3$4+hx'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     # personalizar o painel do django admin
     #'django_adminlte',
     #'django_adminlte_theme',
-    'corsheaders'
+    #'corsheaders'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    #'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # serve para carregar os arquivos estaticos no modo Debug = False e para fazer o deploy da aplicação
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -93,7 +93,7 @@ DATABASES = {
 }
 '''
 
-CSRF_TRUSTED_ORIGINS = ['https://django-server-production-5413.up.railway.app/']
+#CSRF_TRUSTED_ORIGINS = ['https://django-server-production-5413.up.railway.app/']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
